@@ -42,10 +42,11 @@ def convertCelsiusToRandomScale(celsius):
             break
         iterationCount += 1
     
-    if selected_scale in scales:
+    if selected_scale in scales and selected_scale is not None:
         conversion_formula = scales[selected_scale]
     else:
         conversion_formula = scales["Obscure"]
+        selected_scale = "Mystery Scale"
 
     converted_temp = round(conversion_formula(celsius))
 
