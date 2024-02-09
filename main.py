@@ -18,7 +18,7 @@ def requestAPIKey(retry):
 # The retry paramater defined whether this is the second time preforming this request, tailoring the experience slightly to that fact
 def initiateAPIRequest(retry = False):
     apiKey = requestAPIKey(retry)
-    location = input("Enter the location you want to learn the location of: ")
+    location = input("Enter the location you want to learn the temperature of: ")
     url = f'http://api.openweathermap.org/data/2.5/weather?q={location}&appid={apiKey}&units=metric'
     response = requests.get(url)
     data = response.json()
